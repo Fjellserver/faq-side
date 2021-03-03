@@ -8,7 +8,7 @@ class artikkel extends Controller
 {
     public function artikkel_create(Request $request) {
         \DB::table('hosts')->insert(
-            ['name' => $request->host, 'ip' => $request->ip, 'rank' => $request->rank]
+            ['tittel' => $request->tittel, 'innhold' => $request->innhold, 'video' => $request->video, 'kategori' => $request->kategori]
         );
 
         return redirect()->back();
