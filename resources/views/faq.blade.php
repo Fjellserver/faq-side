@@ -91,8 +91,12 @@
             </div>
         </div>
     </div>
-        <div class="copyright py-4 text-center text-white" style="background-color: #2c3e50;">
-        <div class="container"><small id="year">Opphavsrett © Fjellserver 2019 -&nbsp;</small><br><small>Fjellserver.no er på ingen måte tilknyttet/levert/drevet/støttet av Mojang AB eller Microsoft.</small></div>
+    <div class="copyright py-4 text-center text-white" style="background-color: #2c3e50;">
+        <div class="container">
+        <small id="year">Opphavsrett © Fjellserver 2019 -&nbsp;</small>
+        <br>
+        <small>Fjellserver.no er på ingen måte tilknyttet/levert/drevet/støttet av Mojang AB eller Microsoft.</small>
+        </div>
     </div>
 </footer>
 <script src="https://fjellserver.no/assets/js/jquery.min.js"></script>
