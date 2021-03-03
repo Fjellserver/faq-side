@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'App\Http\Controllers\kategori@kategori_show', function () {
     return view('faq');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('dashboard/kategori', 'App\Http\Controllers\kategori@kategori_create', function () {
+});

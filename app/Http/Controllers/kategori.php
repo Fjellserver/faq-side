@@ -12,4 +12,9 @@ class kategori extends Controller
         );
         return redirect()->back();
     }
+
+    public function kategori_show() {
+        $kategori = \DB::table('kategori')->get();
+            return view('faq', ['kategori' => $kategori]);
+        }
 }

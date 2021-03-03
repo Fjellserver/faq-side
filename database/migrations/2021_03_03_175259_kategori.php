@@ -17,7 +17,7 @@ class Kategori extends Migration
             $table->id();
             $table->string('navn');
             $table->string('undertekst');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

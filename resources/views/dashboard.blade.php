@@ -52,14 +52,15 @@
 
 <div class="container">
 <h1>Lag en Kategori:</h1>
-<form action="" method="post">
+<form action="{{url('dashboard/kategori')}}" method="post">
+@csrf
 <div class="mb-3">
-  <label for="kategori" class="form-label">Kategori navn</label>
-  <input type="text" class="form-control" id="kategori" placeholder="Kategori navn">
+  <label for="navn" class="form-label">Kategori navn</label>
+  <input type="text" class="form-control" id="navn" name="navn" placeholder="Kategori navn">
 </div>
 <div class="mb-3">
-  <label for="under" class="form-label">Kategori undertekst</label>
-  <input type="text" class="form-control" id="under" placeholder="Hva handler kategorien om?">
+  <label for="undertekst" class="form-label">Kategori undertekst</label>
+  <input type="text" class="form-control" id="undertekst" name="undertekst" placeholder="Hva handler kategorien om?">
 </div>
 <button type="submit" class="btn btn-primary">Legg til</button>
 </form>
