@@ -45,26 +45,16 @@
 
 <div class="container">
 <h1>Artikler:</h1>
-<h5>Generelt</h5>
+@foreach($artikler as $key => $data)
+<h5>{{$data->kategori}}:</h5>
 <div class="list-group">
   <a href="#" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Hvordan..</h5>
+      <h5 class="mb-1">{{$data->tittel}}</h5>
     </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <p class="mb-1">{{$data->tittel}}</p>
   </a>
-  <a href="#" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Kan jeg..?</h5>
-    </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-  </a>
-  <a href="#" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Slik får du..?</h5>
-    </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-  </a>
+  @endforeach
 </div>
 </div>
 

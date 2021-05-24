@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\kategori@kategori_show', function () {
+Route::get('/', 'App\Http\Controllers\mainshow@show', function () {
     return view('faq');
 });
 
