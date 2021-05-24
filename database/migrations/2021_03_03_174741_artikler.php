@@ -19,7 +19,7 @@ class Artikler extends Migration
             $table->string('innhold');
             $table->string('video');
             $table->string('kategori');
-            $table->timestamps();
+            $table->timestamps()->useCurrent();
         });
     }
 

@@ -23,3 +23,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Con
 
 Route::middleware(['auth:sanctum', 'verified'])->post('dashboard/kategori', 'App\Http\Controllers\kategori@kategori_create', function () {
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->post('dashboard/artikkel', 'App\Http\Controllers\artikkel@artikkel_create', function () {
+});
