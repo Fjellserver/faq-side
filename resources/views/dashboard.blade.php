@@ -30,18 +30,18 @@
 
 <div class="container">
 <h1>Lag en Artikkel:</h1>
-<form action="" method="post">
+<form action="{{url('dashboard/artikkel')}}" method="post">
 @csrf
 <div class="mb-3">
   <label for="tittel" class="form-label">Artikkel navn</label>
-  <input type="text" class="form-control" id="tittel" placeholder="Tittel på artikkel" require>
+  <input type="text" class="form-control" id="tittel" name="tittel" placeholder="Tittel på artikkel" require>
 </div>
 <div class="mb-3">
   <label for="innhold" class="form-label">Artikkel Innhold</label>
-  <textarea  type="text" class="form-control" id="innhold" row="5" placeholder="Innhold"></textarea require>
+  <textarea  type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold"></textarea require>
 </div>
 <label for="KategoriDataList" class="form-label">Velg en kategori</label>
-<input class="form-control" list="datalistOptions" id="KategoriDataList" placeholder="Søk...">
+<input class="form-control" list="datalistOptions" id="KategoriDataList" name="KategoriDataList" placeholder="Søk...">
 <datalist id="datalistOptions">
 @foreach($kategori as $key => $data)
   <option value="{{$data->navn}}">
@@ -49,7 +49,7 @@
 </datalist>
 <div class="mb-3">
   <label for="video" class="form-label">Video URL</label>
-  <input  type="text" class="form-control" id="video" placeholder="Innhold">
+  <input  type="text" class="form-control" id="video" name="video" placeholder="Innhold">
 </div>
 <button type="submit" class="btn btn-primary">Send</button>
 </form>
