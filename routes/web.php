@@ -17,7 +17,7 @@ Route::get('/', 'App\Http\Controllers\kategori@kategori_show', function () {
     return view('faq');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\admin@kategori_show', function () {
     return view('dashboard');
 })->name('dashboard');
 

@@ -43,9 +43,9 @@
 <label for="KategoriDataList" class="form-label">Velg en kategori</label>
 <input class="form-control" list="datalistOptions" id="KategoriDataList" placeholder="Søk...">
 <datalist id="datalistOptions">
-  <option value="Kategori navn 1">
-  <option value="Kategori navn 2">
-  <option value="Kategori navn 3">
+@foreach($kategori as $key => $data)
+  <option value="{{$data->navn}}">
+  @endforeach
 </datalist>
 <div class="mb-3">
   <label for="video" class="form-label">Video URL</label>
@@ -72,9 +72,9 @@
 
 <h2>Endre en Kategori:</h2>
     <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h5>Kategori navn 1</h5><p>undertekst</p></li>
-    <li class="list-group-item"><h5>Kategori navn 2</h5><p>undertekst</p></li>
-    <li class="list-group-item"><h5>Kategori navn 3</h5><p>undertekst</p></li>
+    @foreach($kategori as $key => $data)
+    <li class="list-group-item"><h5>{{$data->navn}}</h5><p>{{$data->undertekst}}</p></li>
+    @endforeach
     </ul>
 </div>
 
