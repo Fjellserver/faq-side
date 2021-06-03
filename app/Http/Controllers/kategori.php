@@ -19,7 +19,7 @@ class kategori extends Controller
         return redirect()->back();
     }
 
-    public function show_artikler() {
+    public function show_kategori_artikler() {
         $kategori = \Input::get('kategori', 'stander');
         $artikler = \DB::table('artikler')->where('kategori', $kategori)->get();
             return view('kategori', ['artikler' => $artikler]);

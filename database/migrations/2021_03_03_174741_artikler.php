@@ -15,11 +15,11 @@ class Artikler extends Migration
     {
         Schema::create('artikler', function (Blueprint $table) {
             $table->id();
-            $table->string('tittel');
-            $table->string('innhold');
-            $table->string('video');
+            $table->text('tittel');
+            $table->text('innhold');
+            $table->string('video')->nullable();
             $table->string('kategori');
-            $table->timestamps()->useCurrent();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

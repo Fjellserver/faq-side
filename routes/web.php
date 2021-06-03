@@ -17,8 +17,12 @@ Route::get('/', 'App\Http\Controllers\mainshow@show', function () {
     return view('faq');
 });
 
-Route::get('/kategori', ['as' => 'kategori', 'uses' => 'App\Http\Controllers\kategori@show_artikler'], function () {
+Route::get('/kategori', ['as' => 'kategori', 'uses' => 'App\Http\Controllers\kategori@show_kategori_artikler'], function () {
     return view('kategori');
+});
+
+Route::get('/artikkel', ['as' => 'artikkel', 'uses' => 'App\Http\Controllers\artikkel@show_artikler'], function () {
+    return view('artikkel');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\admin@kategori_show', function () {

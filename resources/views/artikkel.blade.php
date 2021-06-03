@@ -29,18 +29,13 @@
 </nav>
 
 <div class="container">
-<h1>Artikler:</h1>
-@foreach($artikler as $key => $data)
-<h5>{{$data->kategori}}:</h5>
-<div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{$data->tittel}}</h5>
-    </div>
-    <p class="mb-1">{{$data->tittel}}</p>
-  </a>
-  @endforeach
-</div>
+@foreach($artikkel as $key => $data)
+<h1>{{$data->tittel}}</h1>
+<p>Sist endret: {{$data->updated_at}}</p>
+<hr>
+<iframe width="560" height="315" src="{{$data->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>{{$data->innhold}}</p>
+@endforeach
 </div>
 
 <footer class="footer text-center" style="background-color: #1B316B; padding-bottom: 0%; padding-top: 0%;">

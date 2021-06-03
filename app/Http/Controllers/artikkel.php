@@ -11,13 +11,19 @@ class artikkel extends Controller
         $validated = $request->validate([
             'tittel' => 'required',
             'innhold' => 'required',
-            'kategori' => 'required',
+            'KategoriDataList' => 'required',
         ]);
 
         \DB::table('artikler')->insert(
             ['tittel' => $request->tittel, 'innhold' => $request->innhold, 'video' => $request->video, 'kategori' => $request->KategoriDataList]
         );
         return redirect()->back();
+    }
+
+    public function show_artikler() {
+        $artikler = \Input::get('artikkel', 'stander');
+        $artikkel = \DB::table('artikler')->where('tittel', $artikler)->get();
+            return view('artikkel', ['artikkel' => $artikkel]);
     }
 }
     

@@ -32,7 +32,7 @@
 <h1>Artikler:</h1>
 <div class="list-group">
 @foreach($artikler as $key => $data)
-  <a href="{{ url('/kategori?kategori=' . $data->kategori) }}" class="list-group-item list-group-item-action" aria-current="true">
+  <a href="{{ url('/artikkel?artikkel=' . $data->tittel) }}" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{$data->tittel}}</h5>
     </div>
