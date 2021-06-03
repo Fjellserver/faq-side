@@ -17,6 +17,10 @@ Route::get('/', 'App\Http\Controllers\mainshow@show', function () {
     return view('faq');
 });
 
+Route::get('/kategori', ['as' => 'kategori', 'uses' => 'App\Http\Controllers\kategori@show_artikler'], function () {
+    return view('kategori');
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\admin@kategori_show', function () {
     return view('dashboard');
 })->name('dashboard');

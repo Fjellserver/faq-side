@@ -29,6 +29,16 @@
 </nav>
 
 <div class="container">
+<br>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <h1>Lag en Artikkel:</h1>
 <form action="{{url('dashboard/artikkel')}}" method="post">
 @csrf
@@ -54,7 +64,6 @@
 <button type="submit" class="btn btn-primary">Send</button>
 </form>
 </div>
-
 <div class="container">
 <h1>Lag en Kategori:</h1>
 <form action="{{url('dashboard/kategori')}}" method="post">

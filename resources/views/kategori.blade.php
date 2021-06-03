@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="theme-color" content="#1b316b"/>
-    <title>Fjellserver.no | FAQ</title>
+    <title>Fjellserver.no | FAQ Artikkel</title>
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" sizes="36x36" href="https://fjellserver.no/assets/img/android-icon-36x36.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://fjellserver.no/assets/img/apple-touch-icon.png">
@@ -29,15 +29,14 @@
 </nav>
 
 <div class="container">
-<h1>Kategorier:</h1>
+<h1>Artikler:</h1>
 <div class="list-group">
-@foreach($kategori as $key => $data)
-  <a href="{{ url('/kategori?kategori=' . $data->navn) }}" class="list-group-item list-group-item-action" aria-current="true">
+@foreach($artikler as $key => $data)
+  <a href="{{ url('/kategori?kategori=' . $data->kategori) }}" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{$data->navn}}</h5>
-      <!-- <span class="badge bg-primary rounded-pill d-flex justify-content-between align-items-center text-white">14</span> -->
+      <h5 class="mb-1">{{$data->tittel}}</h5>
     </div>
-    <p class="mb-1">{{$data->undertekst}}</p>
+    <p class="mb-1">{{$data->innhold}}</p>
   </a>
   @endforeach
 </div>
