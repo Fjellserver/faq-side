@@ -36,7 +36,7 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{$data->tittel}}</h5>
     </div>
-    <p class="mb-1">{{$data->innhold}}</p>
+    <p class="mb-1">{{Str::limit($data->innhold, 50)}}</p>
   </a>
   @endforeach
 </div>
