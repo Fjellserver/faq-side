@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="theme-color" content="#1b316b"/>
-    <title>Fjellserver.no | FAQ Artikkel</title>
+    <title>Fjellserver.no | HJELP</title>
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" sizes="36x36" href="https://fjellserver.no/assets/img/android-icon-36x36.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://fjellserver.no/assets/img/apple-touch-icon.png">
@@ -24,12 +24,20 @@
 <body>
 
 <nav class="navbar navbar-light navbar-expand-lg navbar-static-top bg-secondary text-uppercase" style="padding-top: 0%; padding-bottom: 0%;" id="mainNav">
-        <div class="container"><a class="navbar-brand js-scroll-trigger" href="https://fjellserver.no">FJELLSERVER&nbsp;<img id="nav-logo" alt="logo" src="https://fjellserver.no/assets/img/Fjellserver%20-logo%20icon%20transparent.svg"></a>
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="https://hjelp.fjellserver.no">FJELLSERVER&nbsp;<img id="nav-logo" alt="logo" src="https://fjellserver.no/assets/img/Fjellserver%20-logo%20icon%20transparent.svg"></a>
+        <h2 class="text-white">Hjelpe side</h2>
         </div>
 </nav>
 
 <div class="container">
-<h1>Artikler:</h1>
+  <div class="row">
+    <div class="col">
+    <h1>Artikler:</h1>
+    </div>
+    <div class="col">
+    <a class="btn btn-primary btn-lg float-right" href="./" role="button">Gå tilbake</a>
+    </div>
+  </div>
 <div class="list-group">
 @foreach($artikler as $key => $data)
   <a href="{{ url('/artikkel?artikkel=' . $data->tittel) }}" class="list-group-item list-group-item-action" aria-current="true">
