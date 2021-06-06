@@ -25,7 +25,7 @@
 
 <nav class="navbar navbar-light navbar-expand-lg navbar-static-top bg-secondary text-uppercase" style="padding-top: 0%; padding-bottom: 0%;" id="mainNav">
         <div class="container"><a class="navbar-brand js-scroll-trigger" href="https://hjelp.fjellserver.no">FJELLSERVER&nbsp;<img id="nav-logo" alt="logo" src="https://fjellserver.no/assets/img/Fjellserver%20-logo%20icon%20transparent.svg"></a>
-        <h2 class="text-white">Hjelpe side</h2>
+        <h2 class="text-white">Hjelpeside</h2>
         </div>
 </nav>
 
