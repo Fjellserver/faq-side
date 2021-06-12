@@ -44,7 +44,7 @@
 </div>
 </div>
 
-<footer class="footer text-center" style="background-color: #1B316B; padding-bottom: 0%; padding-top: 0%;">
+<footer class="footer text-center fixed-bottom" style="background-color: #1B316B; padding-bottom: 0%; padding-top: 0%;">
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-5 mb-lg-0">
