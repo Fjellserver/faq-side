@@ -9,6 +9,7 @@ npm install
 php artisan migrate --force
 chgrp -R www-data storage bootstrap/cache
 chmod -R ug+rwx storage bootstrap/cache
+chmod -R 775 storage
 ```
 ## Tips
 Dersom det oppstår problemer prøv:

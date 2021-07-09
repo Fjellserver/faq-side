@@ -13,7 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
-        // Fjern denne linjen i produksjon '/upload'
-        // '/upload'
+     '/upload'
     ];
 }
