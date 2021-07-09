@@ -15,9 +15,8 @@ class Artikler extends Migration
     {
         Schema::create('artikler', function (Blueprint $table) {
             $table->id();
-            $table->text('tittel');
-            $table->text('innhold');
-            $table->string('video')->nullable();
+            $table->longText('tittel');
+            $table->longText('innhold');
             $table->string('kategori');
             $table->timestamp('created_at')->useCurrent();
         });

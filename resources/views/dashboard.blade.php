@@ -20,6 +20,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="https://fjellserver.no/assets/css/logo.css">
     <link rel="stylesheet" href="https://fjellserver.no/assets/css/main.css">
+    <!-- TinyMCE editor -->
+    <script src="https://cdn.tiny.cloud/1/t16tdhk8qomhysh45tj4xxfg99e4lw0mbx6f12yrcpojbnje/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea',
+
+            image_class_list: [
+            {title: 'img-responsive', value: 'img-responsive'},
+            ],
+            height: 500,
+            setup: function (editor) {
+                editor.on('init change', function () {
+                    editor.save();
+                });
+            },
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor media",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table paste imagetools"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media ",
+
+            image_title: true,
+            automatic_uploads: true,
+            images_upload_url: '/upload',
+            file_picker_types: 'image',
+            file_picker_callback: function(cb, value, meta) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+                input.onchange = function() {
+                    var file = this.files[0];
+
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function () {
+                        var id = 'blobid' + (new Date()).getTime();
+                        var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+                        var base64 = reader.result.split(',')[1];
+                        var blobInfo = blobCache.create(id, file, base64);
+                        blobCache.add(blobInfo);
+                        cb(blobInfo.blobUri(), { title: file.name });
+                    };
+                };
+                input.click();
+            }
+        });
+  </script>
 </head>
 <body>
 
@@ -59,12 +107,9 @@
   <option value="{{$data->navn}}">
   @endforeach
 </datalist>
-<div class="mb-3">
-  <label for="video" class="form-label">Video URL</label>
-  <input  type="text" class="form-control" id="video" name="video" placeholder="Innhold">
-</div>
-<button type="submit" class="btn btn-primary">Send</button>
+<button type="submit" class="btn btn-primary">Publiser</button>
 </form>
+
 </div>
 <div class="container">
 <h1>Lag en Kategori:</h1>

@@ -37,10 +37,7 @@
 <h1>{{$data->tittel}}</h1>
 <p>Sist endret: {{$data->created_at}}</p>
 <hr>
-@isset($data->video)
-<iframe width="560" height="315" src="{{$data->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-@endisset
-<p>{{$data->innhold}}</p>
+<p>{!! $data->innhold !!}</p>
 @endforeach
 </div>
 
