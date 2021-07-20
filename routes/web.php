@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\mainshow@show', function () {
     return view('faq');
-});
+})->name('faq');
 
 Route::get('/kategori', ['as' => 'kategori', 'uses' => 'App\Http\Controllers\kategori@show_kategori_artikler'], function () {
     return view('kategori');
