@@ -33,10 +33,10 @@
 <div class="container">
   <div class="row">
     <div class="col">
-    <h1>Artikler:</h1>
+    <h1 style="margin-top: 8px; margin-bottom: 8px;">Artikler:</h1>
     </div>
     <div class="col">
-    <a class="btn btn-primary btn-lg float-right" href="./" role="button">Gå tilbake</a>
+    <a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="./" role="button">Gå tilbake</a>
     </div>
   </div>
 <div class="list-group">

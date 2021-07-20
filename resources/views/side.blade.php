@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="theme-color" content="#1b316b"/>
-    <title>Fjellserver.no | HJELP</title>
+    <title>Fjellserver.no | HJELP Rediger Side</title>
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" sizes="36x36" href="https://fjellserver.no/assets/img/android-icon-36x36.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://fjellserver.no/assets/img/apple-touch-icon.png">
@@ -20,25 +20,101 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="https://fjellserver.no/assets/css/logo.css">
     <link rel="stylesheet" href="https://fjellserver.no/assets/css/main.css">
+    <!-- TinyMCE editor -->
+    <script src="https://cdn.tiny.cloud/1/t16tdhk8qomhysh45tj4xxfg99e4lw0mbx6f12yrcpojbnje/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea',
+
+            image_class_list: [
+            {title: 'img-responsive', value: 'img-responsive'},
+            ],
+            height: 500,
+            setup: function (editor) {
+                editor.on('init change', function () {
+                    editor.save();
+                });
+            },
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor media",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table paste imagetools"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media ",
+
+            image_title: true,
+            automatic_uploads: true,
+            images_upload_url: '/upload',
+            file_picker_types: 'image',
+            file_picker_callback: function(cb, value, meta) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+                input.onchange = function() {
+                    var file = this.files[0];
+
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function () {
+                        var id = 'blobid' + (new Date()).getTime();
+                        var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+                        var base64 = reader.result.split(',')[1];
+                        var blobInfo = blobCache.create(id, file, base64);
+                        blobCache.add(blobInfo);
+                        cb(blobInfo.blobUri(), { title: file.name });
+                    };
+                };
+                input.click();
+            }
+        });
+  </script>
 </head>
 <body>
 
 <div class="d-flex flex-column min-vh-100">
 <nav class="navbar navbar-light navbar-expand-lg navbar-static-top bg-secondary text-uppercase" style="padding-top: 0%; padding-bottom: 0%;" id="mainNav">
         <div class="container"><a class="navbar-brand js-scroll-trigger" href="https://hjelp.fjellserver.no">FJELLSERVER&nbsp;<img id="nav-logo" alt="logo" src="https://fjellserver.no/assets/img/Fjellserver%20-logo%20icon%20transparent.svg"></a>
-        <h2 class="text-white">Hjelpeside</h2>
+        <h2 class="text-white">Hjelpeside ADMIN</h2>
         </div>
 </nav>
 
 <div class="container">
 <br>
-<a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ url()->previous() }}" role="button">Gå tilbake</a>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ route('rediger')}}" role="button">Gå tilbake</a>
+<h1>Oppdater en Artikkel:</h1>
+<form action="{{url('/dashboard/rediger/side')}}" method="post">
+@csrf
+<div class="mb-3">
 @foreach($artikkel as $key => $data)
-<h1>{{$data->tittel}}</h1>
-<p>Sist endret: {{$data->created_at}}</p>
-<hr>
-<p>{!! $data->innhold !!}</p>
+  <label for="tittel" class="form-label">Artikkel navn</label>
+  <input type="text" class="form-control" id="tittel" name="tittel" placeholder="Tittel på artikkel" value="{{$data->tittel}}" require>
+</div>
+<div class="mb-3">
+  <label for="innhold" class="form-label">Artikkel Innhold</label>
+  <textarea  type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold">{{$data->innhold}}</textarea require>
+</div>
+<label for="KategoriDataList" class="form-label">Velg en kategori</label>
+<input class="form-control" list="datalistOptions" id="KategoriDataList" name="KategoriDataList" placeholder="Søk..." value="{{$data->kategori}}">
+<label for="id" class="form-label">Artikkel id</label>
+<input type="number" class="form-control" name="id" id="id" value="{{$data->id}}" readonly>
 @endforeach
+<datalist id="datalistOptions">
+@foreach($kategori as $key => $data)
+  <option value="{{$data->navn}}">
+  @endforeach
+</datalist>
+<button type="submit" class="btn btn-primary">Oppdater</button>
+</form>
+
 </div>
 
 <main class="flex-fill"></main>

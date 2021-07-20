@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="theme-color" content="#1b316b"/>
-    <title>Fjellserver.no | HJELP</title>
+    <title>Fjellserver.no | HJELP Dashboard rediger</title>
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" sizes="36x36" href="https://fjellserver.no/assets/img/android-icon-36x36.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://fjellserver.no/assets/img/apple-touch-icon.png">
@@ -26,19 +26,34 @@
 <div class="d-flex flex-column min-vh-100">
 <nav class="navbar navbar-light navbar-expand-lg navbar-static-top bg-secondary text-uppercase" style="padding-top: 0%; padding-bottom: 0%;" id="mainNav">
         <div class="container"><a class="navbar-brand js-scroll-trigger" href="https://hjelp.fjellserver.no">FJELLSERVER&nbsp;<img id="nav-logo" alt="logo" src="https://fjellserver.no/assets/img/Fjellserver%20-logo%20icon%20transparent.svg"></a>
-        <h2 class="text-white">Hjelpeside</h2>
+        <h2 class="text-white">Hjelpeside ADMIN</h2>
         </div>
 </nav>
 
 <div class="container">
 <br>
-<a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ url()->previous() }}" role="button">Gå tilbake</a>
-@foreach($artikkel as $key => $data)
-<h1>{{$data->tittel}}</h1>
-<p>Sist endret: {{$data->created_at}}</p>
-<hr>
-<p>{!! $data->innhold !!}</p>
-@endforeach
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ route('dashboard')}}" role="button">Gå tilbake</a>
+<h1>Rediger en artikkel:</h1>
+<div class="list-group" style="margin-top: 8px; margin-bottom: 8px;">
+@foreach($artikler as $key => $data)
+  <a href="{{ url('/dashboard/rediger/side?artikkel=' . $data->tittel) }}" class="list-group-item list-group-item-action" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{$data->tittel}}</h5>
+    </div>
+    <p class="mb-1">Kategori: {{$data->kategori}}</p>
+    <p class="mb-1">Sist endret: {{$data->created_at}}</p>
+  </a>
+  @endforeach
+</div>
 </div>
 
 <main class="flex-fill"></main>

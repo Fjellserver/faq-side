@@ -15,7 +15,7 @@ class artikkel extends Controller
         ]);
 
         \DB::table('artikler')->insert(
-            ['tittel' => $request->tittel, 'innhold' => $request->innhold, 'video' => $request->video, 'kategori' => $request->KategoriDataList]
+            ['tittel' => $request->tittel, 'innhold' => $request->innhold, 'kategori' => $request->KategoriDataList]
         );
         return redirect()->back();
     }

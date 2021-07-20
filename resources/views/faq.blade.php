@@ -31,7 +31,7 @@
 </nav>
 
 <div class="container">
-<h1>Kategorier:</h1>
+<h1 style="margin-top: 8px; margin-bottom: 8px;">Kategorier:</h1>
 <div class="list-group">
 @foreach($kategori as $key => $data)
   <a href="{{ url('/kategori?kategori=' . $data->navn) }}" class="list-group-item list-group-item-action" aria-current="true">

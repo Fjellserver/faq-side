@@ -29,10 +29,21 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Con
     return view('dashboard');
 })->name('dashboard');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rediger', 'App\Http\Controllers\rediger@artikkel_show', function () {
+    return view('rediger');
+})->name('rediger');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rediger/side', ['as' => 'artikkel', 'uses' => 'App\Http\Controllers\rediger@artikkel_edit'], function () {
+    return view('side');
+})->name('side');
+
 Route::middleware(['auth:sanctum', 'verified'])->post('dashboard/kategori', 'App\Http\Controllers\kategori@kategori_create', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->post('dashboard/artikkel', 'App\Http\Controllers\artikkel@artikkel_create', function () {
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/rediger/side', 'App\Http\Controllers\rediger@artikkel_update', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->post('/upload', 'App\Http\Controllers\FileController@upload', function () {
