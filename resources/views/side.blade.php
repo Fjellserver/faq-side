@@ -102,8 +102,12 @@
   <label for="innhold" class="form-label">Artikkel Innhold</label>
   <textarea  type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold">{{$data->innhold}}</textarea require>
 </div>
+
 <label for="KategoriDataList" class="form-label">Velg en kategori</label>
 <input class="form-control" list="datalistOptions" id="KategoriDataList" name="KategoriDataList" placeholder="Søk..." value="{{$data->kategori}}">
+
+<label for="short" class="form-label">Kort navn</label>
+<input type="text" class="form-control" id="short" name="short" placeholder="Et kort navn" value="{{$data->short}}" require>
 <label for="id" class="form-label">Artikkel id</label>
 <input type="number" class="form-control" name="id" id="id" value="{{$data->id}}" readonly>
 @endforeach

@@ -108,6 +108,10 @@
   <option value="{{$data->navn}}">
   @endforeach
 </datalist>
+<div class="mb-3">
+    <label for="short" class="form-label">Et kort navn</label>
+    <input type="text" class="form-control" id="short" name="short" placeholder="Et kort navn" require>
+  </div>
 <button type="submit" class="btn btn-primary">Publiser</button>
 </form>
 

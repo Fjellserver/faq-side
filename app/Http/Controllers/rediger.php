@@ -23,6 +23,7 @@ class rediger extends Controller
             'tittel' => 'required',
             'innhold' => 'required',
             'KategoriDataList' => 'required',
+            'short' => 'required',
         ]);
 
         \DB::table('artikler')
@@ -31,6 +32,7 @@ class rediger extends Controller
                 'tittel' => $request->tittel, 
                 'innhold' => $request->innhold, 
                 'kategori' => $request->KategoriDataList,
+                'short' => $request->short, 
                 'created_at' => now()
         ]);
         return redirect()->route('rediger');

@@ -12,10 +12,11 @@ class artikkel extends Controller
             'tittel' => 'required',
             'innhold' => 'required',
             'KategoriDataList' => 'required',
+            'short' => 'required',
         ]);
 
         \DB::table('artikler')->insert(
-            ['tittel' => $request->tittel, 'innhold' => $request->innhold, 'kategori' => $request->KategoriDataList]
+            ['tittel' => $request->tittel, 'innhold' => $request->innhold, 'kategori' => $request->KategoriDataList, 'short' => $request->short]
         );
         return redirect()->back();
     }
