@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="theme-color" content="#1b316b"/>
-    <title>Fjellserver.no | HJELP Rediger Side</title>
+    <title>HJELP Rediger Side | Fjellserver.no</title>
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" sizes="36x36" href="https://fjellserver.no/assets/img/android-icon-36x36.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://fjellserver.no/assets/img/apple-touch-icon.png">
