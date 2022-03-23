@@ -85,6 +85,8 @@
         <small id="year">Opphavsrett © Fjellserver 2019 -&nbsp;</small>
         <br>
         <small>Fjellserver.no er på ingen måte tilknyttet/levert/drevet/støttet av Mojang AB eller Microsoft.</small>
+        <br>
+        <small>Fjellserver.no eies av Batalden Data Org.nr 928 144 488</small>
         </div>
     </div>
 </footer>
