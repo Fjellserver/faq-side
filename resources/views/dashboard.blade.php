@@ -202,7 +202,7 @@
             <a href="http://kunde.fjellserver.no/" style="color: white;">Kundeportal</a>
           </div>
           <div class="col-md">
-            <a href="https://panel.fjellserver.no/" style="color: white;">Kontrollpanelet</a>
+            <a href="https://panel.fjellserver.no/" style="color: white;">Kontrollpanel</a>
           </div>
         </div>
       </div>
