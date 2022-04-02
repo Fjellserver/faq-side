@@ -40,8 +40,8 @@
                 "searchreplace visualblocks code fullscreen",
                 "insertdatetime media table paste imagetools"
             ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media ",
-
+            toolbar: "insertfile undo redo | styleselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media ",
+            content_style: "body {font-size: 14pt;}",
             image_title: true,
             automatic_uploads: true,
             images_upload_url: '/upload',
@@ -100,7 +100,7 @@
 </div>
 <div class="mb-3">
   <label for="innhold" class="form-label">Artikkel Innhold</label>
-  <textarea  type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold">{{$data->innhold}}</textarea require>
+  <textarea type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold">{{$data->innhold}}</textarea require>
 </div>
 
 <label for="KategoriDataList" class="form-label">Velg en kategori</label>
