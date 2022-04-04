@@ -21,8 +21,9 @@ class Artikler extends Migration
             $table->string('kategori');
             $table->timestamp('created_at')->useCurrent();
             $table->string('url');
-            $table->boolean('hide')->default(0);
-            $table->boolean('sticky')->default(0);
+            $table->string('short');
+            $table->boolean('hide')->default('0');
+            $table->boolean('sticky')->default('0');
         });
     }
 

@@ -15,8 +15,8 @@ class Urlandhide extends Migration
     {
         Schema::table('artikler', function (Blueprint $table) {
             $table->string('url');
-            $table->boolean('hide');
-            $table->boolean('sticky');
+            $table->boolean('hide')->default('0');
+            $table->boolean('sticky')->default('0');
         });
     }
 

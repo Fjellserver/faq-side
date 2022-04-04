@@ -16,9 +16,19 @@ class artikkel extends Controller
         ]);
 
         $urltrim = str_replace(" ", "_", $request->tittel);
-        $urltrimfinaly = str_replace("?", "", $urltrim);
+        $urltrimfinaly = str_replace("?", "", $urltrim);  
+
         \DB::table('artikler')->insert(
-            ['tittel' => $request->tittel, 'url' => $urltrimfinaly, 'intro' => $request->intro, 'innhold' => $request->innhold, 'kategori' => $request->KategoriDataList, 'short' => $request->short, 'hide' => $request->hide, 'sticky' => $request->sticky]
+            [
+            'tittel' => $request->tittel,
+            'url' => $urltrimfinaly,
+            'intro' => $request->intro,
+            'innhold' => $request->innhold,
+            'kategori' => $request->KategoriDataList,
+            'short' => $request->short,
+            'hide' => is_null($request->hide) ? 0 : $request->hide,
+            'sticky' => is_null($request->sticky) ? 0 : $request->sticky
+            ]
         );
         return redirect()->back();
     }

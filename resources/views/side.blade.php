@@ -140,7 +140,7 @@ function hidecheck()
 </div>
 <div class="mb-3">
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="{{$data->hide}}" @if (isset($data->sticky)) @if ($data->sticky==1) checked @endif @endif id="hide" name="hide" onclick="hidecheck();">
+    <input class="form-check-input" type="checkbox" value="{{$data->hide}}" @if (isset($data->hide)) @if ($data->hide==1) checked @endif @endif id="hide" name="hide" onclick="hidecheck();">
     <label class="form-check-label" for="hide">
       Skjul artikkel
     </label>

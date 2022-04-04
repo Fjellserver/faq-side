@@ -21,7 +21,8 @@ class kategori extends Controller
 
     public function show_kategori_artikler() {
         $kategori = \Input::get('kategori', 'stander');
-        $artikler = \DB::table('artikler')->where('kategori', $kategori)->get();
+        //$artikler = \DB::table('artikler')->where('kategori', $kategori)->get();
+        $artikler = \DB::table('artikler')->where('kategori', $kategori)->orderBy('sticky', 'desc')->where('hide', 0)->get();
             return view('kategori', ['artikler' => $artikler]);
         }
 }
