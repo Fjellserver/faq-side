@@ -106,8 +106,46 @@
 <label for="KategoriDataList" class="form-label">Velg en kategori</label>
 <input class="form-control" list="datalistOptions" id="KategoriDataList" name="KategoriDataList" placeholder="Søk..." value="{{$data->kategori}}">
 
+<div class="mb-3">
 <label for="short" class="form-label">Kort navn</label>
 <input type="text" class="form-control" id="short" name="short" placeholder="Et kort navn" value="{{$data->short}}" require>
+</div>
+<script>
+  function check()
+{
+  if (document.getElementById('sticky').checked) 
+  {
+      document.getElementById('sticky').value = 1;
+  } else {
+    document.getElementById('sticky').value = 0;
+  }
+}
+function hidecheck()
+{
+  if (document.getElementById('hide').checked) 
+  {
+      document.getElementById('hide').value = 1;
+  } else {
+    document.getElementById('hide').value = 0;
+  }
+}
+</script>
+<div class="mb-3">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="{{$data->sticky}}" @if (isset($data->sticky)) @if ($data->sticky==1) checked @endif @endif id="sticky" name="sticky" onclick="check();">
+    <label class="form-check-label" for="sticky">
+      Fest øverst på siden
+    </label>
+  </div>
+</div>
+<div class="mb-3">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="{{$data->hide}}" @if (isset($data->sticky)) @if ($data->sticky==1) checked @endif @endif id="hide" name="hide" onclick="hidecheck();">
+    <label class="form-check-label" for="hide">
+      Skjul artikkel
+    </label>
+  </div>
+</div>
 <label for="id" class="form-label">Artikkel id</label>
 <input type="number" class="form-control" name="id" id="id" value="{{$data->id}}" readonly>
 @endforeach
