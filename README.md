@@ -15,6 +15,11 @@ chmod -R 775 storage
 Dersom det oppstår problemer prøv:
 ```
 php artisan optimize
+
+kan ikke laste opp bilder:
+rm public/storage
+php artisan optimize:clear
+php artisan storage:link
 ```
 Husk å lag bruker! Filen finnes under:
 ```

@@ -16,9 +16,13 @@ class Artikler extends Migration
         Schema::create('artikler', function (Blueprint $table) {
             $table->id();
             $table->longText('tittel');
+            $table->longText('intro');
             $table->longText('innhold');
             $table->string('kategori');
             $table->timestamp('created_at')->useCurrent();
+            $table->string('url');
+            $table->boolean('hide')->default(0);
+            $table->boolean('sticky')->default(0);
         });
     }
 
