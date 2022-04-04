@@ -146,6 +146,7 @@ function hidecheck()
     </label>
   </div>
 </div>
+<div class="mb-3">
 <label for="id" class="form-label">Artikkel id</label>
 <input type="number" class="form-control" name="id" id="id" value="{{$data->id}}" readonly>
 @endforeach
@@ -155,6 +156,7 @@ function hidecheck()
   @endforeach
 </datalist>
 <button type="submit" class="btn btn-primary">Oppdater</button>
+</div>
 </form>
 
 </div>
