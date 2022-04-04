@@ -21,19 +21,26 @@ class rediger extends Controller
     public function artikkel_update(Request $request) {
         $validated = $request->validate([
             'tittel' => 'required',
+            'intro' => 'required',
             'innhold' => 'required',
             'KategoriDataList' => 'required',
             'short' => 'required',
         ]);
 
+        $urltrim = str_replace(" ", "_", $request->tittel);
+        $urltrimfinaly = str_replace("?", "", $urltrim);  
+        
         \DB::table('artikler')
             ->where('id', $request->id)
             ->update([
-                'tittel' => $request->tittel, 
-                'innhold' => $request->innhold, 
+                'tittel' => $request->tittel,
+                'url' => $urltrimfinaly,
+                'intro' => $request->intro,
+                'innhold' => $request->innhold,
                 'kategori' => $request->KategoriDataList,
-                'short' => $request->short, 
-                'created_at' => now()
+                'short' => $request->short,
+                'hide' => is_null($request->hide) ? 0 : $request->hide,
+                'sticky' => is_null($request->sticky) ? 0 : $request->sticky
         ]);
         return redirect()->route('rediger');
     }
