@@ -151,6 +151,8 @@ function hidecheck()
 <div class="mb-3">
 <label for="id" class="form-label">Artikkel id</label>
 <input type="number" class="form-control" name="id" id="id" value="{{$data->id}}" readonly>
+<label for="delid" class="form-label">Skriv artikkelens tittel for å slette</label>
+<input type="text" class="form-control" id="delid" name="delid" placeholder="La stå tom med mindre du vil slette artikkelen" value="">
 @endforeach
 <datalist id="datalistOptions">
 @foreach($kategori as $key => $data)

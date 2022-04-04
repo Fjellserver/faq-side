@@ -30,7 +30,13 @@ class rediger extends Controller
         $urltrim = str_replace(" ", "_", $request->tittel);
         $urltrimfinaly = str_replace("?", "", $urltrim);  
         
-        \DB::table('artikler')
+        if($request->delid == $request->tittel) {
+            \DB::table('artikler')
+            ->where('tittel', $request->tittel)->delete();
+        }
+
+        else {
+            \DB::table('artikler')
             ->where('id', $request->id)
             ->update([
                 'tittel' => $request->tittel,
@@ -42,6 +48,7 @@ class rediger extends Controller
                 'hide' => is_null($request->hide) ? 0 : $request->hide,
                 'sticky' => is_null($request->sticky) ? 0 : $request->sticky
         ]);
+        }
         return redirect()->route('rediger');
     }
 }
