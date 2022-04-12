@@ -26,7 +26,7 @@ class Intro extends Migration
     public function down()
     {
         Schema::table('artikler', function (Blueprint $table) {
-            $table->longText('intro');
+            $table->dropColumn('intro');
         });
     }
 }

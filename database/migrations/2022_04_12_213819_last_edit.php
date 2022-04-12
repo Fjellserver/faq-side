@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Urlandhide extends Migration
+class LastEdit extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class Urlandhide extends Migration
     public function up()
     {
         Schema::table('artikler', function (Blueprint $table) {
-            $table->string('url');
-            $table->boolean('hide')->default('0');
-            $table->boolean('sticky')->default('0');
+            $table->timestamp('last_updated')->useCurrent();
         });
     }
 
@@ -28,9 +26,7 @@ class Urlandhide extends Migration
     public function down()
     {
         Schema::table('artikler', function (Blueprint $table) {
-            $table->dropColumn('url');
-            $table->dropColumn('hide');
-            $table->dropColumn('sticky');
+            $table->dropColumn('last_updated');
         });
     }
 }

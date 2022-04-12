@@ -35,7 +35,7 @@
 <a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ url()->previous() }}" role="button">Gå tilbake</a>
 @foreach($artikkel as $key => $data)
 <h1>{{$data->tittel}}</h1>
-<p>Sist endret: {{$data->created_at}}</p>
+<p>Sist endret: {{$data->last_updated}}</p>
 <hr>
 <p>{!! $data->innhold !!}</p>
 @endforeach

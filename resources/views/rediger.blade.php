@@ -50,7 +50,7 @@
       <h5 class="mb-1">{{$data->tittel}}</h5>
     </div>
     <p class="mb-1">Kategori: {{$data->kategori}}</p>
-    <p class="mb-1">Sist endret: {{$data->created_at}}</p>
+    <p class="mb-1">Sist endret: {{$data->last_updated}}</p>
   </a>
   @endforeach
 </div>

@@ -47,7 +47,7 @@ class rediger extends Controller
                 'short' => $request->short,
                 'hide' => is_null($request->hide) ? 0 : $request->hide,
                 'sticky' => is_null($request->sticky) ? 0 : $request->sticky,
-                'created_at' => now()
+                'last_updated' => now()
         ]);
         }
         return redirect()->route('rediger');
