@@ -46,7 +46,8 @@ class rediger extends Controller
                 'kategori' => $request->KategoriDataList,
                 'short' => $request->short,
                 'hide' => is_null($request->hide) ? 0 : $request->hide,
-                'sticky' => is_null($request->sticky) ? 0 : $request->sticky
+                'sticky' => is_null($request->sticky) ? 0 : $request->sticky,
+                'created_at' => now()
         ]);
         }
         return redirect()->route('rediger');
