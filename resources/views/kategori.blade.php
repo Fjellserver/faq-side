@@ -45,7 +45,7 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{!! $data->tittel !!}</h5>
     </div>
-    <p class="mb-1">{!! Str::limit(strip_tags($data->innhold), 50) !!}</p>
+    <p class="mb-1">{!! $data->intro !!}</p>
   </a>
   @endforeach
 </div>
