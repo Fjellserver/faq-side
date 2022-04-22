@@ -17,7 +17,7 @@ class AddHideStickyAndLastupdatedToKatogori extends Migration
             $table->timestamp('last_updated')->useCurrent();
             $table->boolean('hide')->default('0');
             $table->boolean('sticky')->default('0');
-            $table->string('rank');
+            $table->int('prioritering')->default('0');
         });
     }
 
@@ -32,7 +32,7 @@ class AddHideStickyAndLastupdatedToKatogori extends Migration
             $table->dropColumn('hide');
             $table->dropColumn('sticky');
             $table->dropColumn('last_updated');
-            $tabel->dropColumn('rank');
+            $tabel->dropColumn('prioritering');
         });
     }
 }

@@ -11,10 +11,15 @@ class kategori extends Controller
         $validated = $request->validate([
             'navn' => 'required',
             'undertekst' => 'required',
+            'prioritering' => 'required',
         ]);
 
         \DB::table('kategori')->insert(
-            ['navn' => $request->navn, 'undertekst' => $request->undertekst]
+            [
+            'navn' => $request->navn, 
+            'undertekst' => $request->undertekst, 
+            'prioritering' => $request->prioritering
+            ]
         );
         return redirect()->back();
     }
@@ -34,5 +39,32 @@ class kategori extends Controller
         $kategori_input = \Input::get('kategori', '1');
         $kategori = \DB::table('kategori')->where('id', $kategori_input)->get();
             return view('selectedkategori', ['kategori' => $kategori]);
-    }  
+    }
+
+    public function kategori_update(Request $request) {
+        $validated = $request->validate([
+            'navn' => 'required',
+            'undertekst' => 'required',
+            'prioritering' => 'required',
+        ]);
+        
+        if($request->delid == $request->navn) {
+            \DB::table('kategori')
+            ->where('id', $request->id)->delete();
+        }
+
+        else {
+            \DB::table('kategori')
+            ->where('id', $request->id)
+            ->update([
+                'navn' => $request->navn,
+                'undertekst' => $request->undertekst,
+                'prioritering' => is_null($request->rank) ? 0 : $request->rank,
+                'hide' => is_null($request->hide) ? 0 : $request->hide,
+                'sticky' => is_null($request->sticky) ? 0 : $request->sticky,
+                'last_updated' => now()
+        ]);
+        }
+        return redirect()->route('redigerkategori');
+    }
 }

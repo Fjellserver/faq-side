@@ -54,5 +54,8 @@ Route::middleware(['auth:sanctum', 'verified'])->post('dashboard/artikkel', 'App
 Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/rediger/side', 'App\Http\Controllers\rediger@artikkel_update', function () {
 });
 
+Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/rediger/kategori/selectedkategori', 'App\Http\Controllers\kategori@kategori_update', function () {
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->post('/upload', 'App\Http\Controllers\FileController@upload', function () {
 });

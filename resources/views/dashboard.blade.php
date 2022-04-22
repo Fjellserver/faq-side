@@ -177,6 +177,10 @@ function hidecheck()
     <input type="text" class="form-control" id="undertekst" name="undertekst" placeholder="Hva handler kategorien om?">
   </div>
   <div class="mb-3">
+    <label for="prioritering" class="form-label">Prioritering</label>
+    <input type="number" class="form-control" name="prioritering" id="prioritering" placeholder="Gi arikkelen en prioritering jo høyere tall dersto høyere på siden kommer den">
+  </div>
+  <div class="mb-3">
   <button type="submit" class="btn btn-primary">Legg til</button>
   </form>
   </div>

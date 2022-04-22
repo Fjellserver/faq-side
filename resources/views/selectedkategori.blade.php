@@ -54,6 +54,10 @@
   <label for="undertekst" class="form-label">Undertekst</label>
   <input type="text" class="form-control" id="undertekst" name="undertekst" placeholder="beskriv hva kategorien handler om" value="{{$data->undertekst}}" require>
 </div>
+<div class="mb-3">
+  <label for="prioritering" class="form-label">Prioritering</label>
+  <input type="number" class="form-control" name="prioritering" id="prioritering" placeholder="Gi arikkelen en prioritering jo høyere tall dersto høyere på siden kommer den" value="{{$data->prioritering}}" require>
+</div>
 
 <script>
   function check()
