@@ -24,4 +24,15 @@ class kategori extends Controller
         $artikler = \DB::table('artikler')->where('kategori', $kategori)->orderBy('sticky', 'desc')->where('hide', 0)->get();
             return view('kategori', ['artikler' => $artikler]);
         }
+
+    public function kategori_edit() {
+        $kategori = \DB::table('kategori')->orderBy('sticky', 'desc')->where('hide', 0)->get();
+            return view('redigerkategori', ['kategori' => $kategori]);
+    }    
+
+    public function selectedkategori() {
+        $kategori_input = \Input::get('kategori', '1');
+        $kategori = \DB::table('kategori')->where('id', $kategori_input)->get();
+            return view('selectedkategori', ['kategori' => $kategori]);
+    }  
 }

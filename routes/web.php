@@ -37,6 +37,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rediger/side', 
     return view('side');
 })->name('side');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rediger/kategori', 'App\Http\Controllers\kategori@kategori_edit', function () {
+    return view('redigerkategori');
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rediger/kategori/selectedkategori', ['as' => 'selectedkategori', 'uses' => 'App\Http\Controllers\kategori@selectedkategori'], function () {
+    return view('selectedkategori');
+})->name('selectedkategori');
+
 Route::middleware(['auth:sanctum', 'verified'])->post('dashboard/kategori', 'App\Http\Controllers\kategori@kategori_create', function () {
 });
 
