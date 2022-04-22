@@ -50,7 +50,7 @@
       <h5 class="mb-1">{{$data->navn}}</h5>
     </div>
     <p class="mb-1">{{$data->undertekst}}</p>
-    <p class="mb-1">Sist endret: {{$data->last_updated}}</p>
+    <p class="mb-1"><b>Sist endret:</b> {{$data->last_updated}}</p>
   </a>
   @endforeach
 </div>

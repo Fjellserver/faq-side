@@ -49,8 +49,8 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{$data->tittel}}</h5>
     </div>
-    <p class="mb-1">Kategori: {{$data->kategori}}</p>
-    <p class="mb-1">Sist endret: {{$data->last_updated}}</p>
+    <p class="mb-1"><b>Kategori:</b> {{$data->kategori}}</p>
+    <p class="mb-1"><b>Sist endret:</b> {{$data->last_updated}}</p>
   </a>
   @endforeach
 </div>

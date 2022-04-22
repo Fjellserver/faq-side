@@ -96,6 +96,8 @@
 <div class="mb-3">
   <label for="tittel" class="form-label">Artikkel navn</label>
   <input type="text" class="form-control" id="tittel" name="tittel" placeholder="Tittel på artikkel" require>
+</div>
+<div class="mb-3">
   <label for="intro" class="form-label">Intro</label>
   <input type="text" class="form-control" id="intro" name="intro" placeholder="Intro på artikkelen" require>
 </div>
@@ -103,6 +105,7 @@
   <label for="innhold" class="form-label">Innhold</label>
   <textarea type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold"></textarea require>
 </div>
+<div class="mb-3">
 <label for="KategoriDataList" class="form-label">Velg en kategori</label>
 <input class="form-control" list="datalistOptions" id="KategoriDataList" name="KategoriDataList" placeholder="Søk...">
 <datalist id="datalistOptions">
@@ -110,6 +113,7 @@
   <option value="{{$data->navn}}">
   @endforeach
 </datalist>
+</div>
 <div class="mb-3">
     <label for="short" class="form-label">Et kort navn</label>
     <input type="text" class="form-control" id="short" name="short" placeholder="Et kort navn" require>
@@ -150,31 +154,32 @@ function hidecheck()
     </label>
   </div>
 </div>
+<div class="mb-3">
 <button type="submit" class="btn btn-primary">Publiser</button>
+</div>
 </form>
 
 </div>
+
 <div class="container">
-<h1>Lag en Kategori:</h1>
+  <div class="mb-3">
+  <a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ route('redigerkategori')}}" role="button">Endre en kategori</a>
+  <h1>Lag en Kategori:</h1>
+  </div>
 <form action="{{url('dashboard/kategori')}}" method="post">
 @csrf
-<div class="mb-3">
-  <label for="navn" class="form-label">Kategori navn</label>
-  <input type="text" class="form-control" id="navn" name="navn" placeholder="Kategori navn">
-</div>
-<div class="mb-3">
-  <label for="undertekst" class="form-label">Kategori undertekst</label>
-  <input type="text" class="form-control" id="undertekst" name="undertekst" placeholder="Hva handler kategorien om?">
-</div>
-<button type="submit" class="btn btn-primary">Legg til</button>
-</form>
-
-<h2>Endre en Kategori:</h2>
-    <ul class="list-group list-group-flush">
-    @foreach($kategori as $key => $data)
-    <li class="list-group-item"><h5>{{$data->navn}}</h5><p>{{$data->undertekst}}</p></li>
-    @endforeach
-    </ul>
+  <div class="mb-3">
+    <label for="navn" class="form-label">Kategori navn</label>
+    <input type="text" class="form-control" id="navn" name="navn" placeholder="Kategori navn">
+  </div>
+  <div class="mb-3">
+    <label for="undertekst" class="form-label">Kategori undertekst</label>
+    <input type="text" class="form-control" id="undertekst" name="undertekst" placeholder="Hva handler kategorien om?">
+  </div>
+  <div class="mb-3">
+  <button type="submit" class="btn btn-primary">Legg til</button>
+  </form>
+  </div>
 </div>
 
 <main class="flex-fill"></main>
