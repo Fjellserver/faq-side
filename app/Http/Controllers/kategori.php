@@ -18,7 +18,9 @@ class kategori extends Controller
             [
             'navn' => $request->navn, 
             'undertekst' => $request->undertekst, 
-            'prioritering' => $request->prioritering
+            'prioritering' => $request->prioritering,
+            'hide' => is_null($request->hide) ? 0 : $request->hide,
+            'sticky' => is_null($request->sticky) ? 0 : $request->sticky,
             ]
         );
         return redirect()->back();

@@ -17,7 +17,7 @@ class AddHideStickyAndLastupdatedToKatogori extends Migration
             $table->timestamp('last_updated')->useCurrent();
             $table->boolean('hide')->default('0');
             $table->boolean('sticky')->default('0');
-            $table->int('prioritering')->default('0');
+            $table->string('prioritering')->default('0');
         });
     }
 

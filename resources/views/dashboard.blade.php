@@ -158,7 +158,6 @@ function hidecheck()
 <button type="submit" class="btn btn-primary">Publiser</button>
 </div>
 </form>
-
 </div>
 
 <div class="container">
@@ -179,6 +178,42 @@ function hidecheck()
   <div class="mb-3">
     <label for="prioritering" class="form-label">Prioritering</label>
     <input type="number" class="form-control" name="prioritering" id="prioritering" placeholder="Gi arikkelen en prioritering jo høyere tall dersto høyere på siden kommer den">
+  </div>
+  <script>
+    function kategoricheck()
+  {
+    if (document.getElementById('stickykategori').checked) 
+    {
+        document.getElementById('stickykategori').value = 1;
+    } else {
+      document.getElementById('stickykategori').value = 0;
+    }
+  }
+  function kategorihidecheck()
+  {
+    if (document.getElementById('hidekategori').checked) 
+    {
+        document.getElementById('hidekategori').value = 1;
+    } else {
+      document.getElementById('hidekategori').value = 0;
+    }
+  }
+  </script>
+  <div class="mb-3">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="0" id="stickykategori" name="sticky" onclick="kategoricheck();">
+      <label class="form-check-label" for="sticky">
+        Fest øverst på siden
+      </label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="0" id="hidekategori" name="hide" onclick="kategorihidecheck();">
+      <label class="form-check-label" for="hide">
+        Skjul artikkel
+      </label>
+    </div>
   </div>
   <div class="mb-3">
   <button type="submit" class="btn btn-primary">Legg til</button>

@@ -25,7 +25,7 @@ Route::get('/artikkel', ['as' => 'artikkel', 'uses' => 'App\Http\Controllers\art
     return view('artikkel');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\admin@kategori_show', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\admin@main_show', function () {
     return view('dashboard');
 })->name('dashboard');
 
