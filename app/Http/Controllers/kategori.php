@@ -33,7 +33,7 @@ class kategori extends Controller
         }
 
     public function kategori_edit() {
-        $kategori = \DB::table('kategori')->orderBy('sticky', 'desc')->where('hide', 0)->get();
+        $kategori = \DB::table('kategori')->orderBy('sticky', 'desc')->get();
             return view('redigerkategori', ['kategori' => $kategori]);
     }    
 
