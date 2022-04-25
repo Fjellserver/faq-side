@@ -36,11 +36,12 @@
                 });
             },
             plugins: [
-                "advlist autolink lists link image charmap print preview anchor media",
+                "advlist autolink autosave lists link image charmap print preview anchor media",
                 "searchreplace visualblocks code fullscreen",
                 "insertdatetime media table paste imagetools"
             ],
-            toolbar: "insertfile undo redo | styleselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media ",
+            toolbar: "insertfile undo redo | styleselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | restoredraft",
+            mobile: { theme: 'mobile' },
             content_style: "body {font-size: 14pt;}",
             image_title: true,
             automatic_uploads: true,
