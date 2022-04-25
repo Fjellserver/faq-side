@@ -25,8 +25,6 @@ class LastEdit extends Migration
      */
     public function down()
     {
-        Schema::table('artikler', function (Blueprint $table) {
-            $table->dropColumn('last_updated');
-        });
+        Schema::dropIfExists('artikler');
     }
 }

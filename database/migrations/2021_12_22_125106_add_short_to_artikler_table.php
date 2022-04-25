@@ -25,8 +25,6 @@ class AddShortToArtiklerTable extends Migration
      */
     public function down()
     {
-        Schema::table('artikler', function (Blueprint $table) {
-            $table->dropColumn('short');
-        });
+        Schema::dropIfExists('artikler');
     }
 }

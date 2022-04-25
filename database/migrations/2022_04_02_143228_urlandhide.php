@@ -27,10 +27,6 @@ class Urlandhide extends Migration
      */
     public function down()
     {
-        Schema::table('artikler', function (Blueprint $table) {
-            $table->dropColumn('url');
-            $table->dropColumn('hide');
-            $table->dropColumn('sticky');
-        });
+        Schema::dropIfExists('artikler');
     }
 }
