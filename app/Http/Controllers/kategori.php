@@ -11,14 +11,13 @@ class kategori extends Controller
         $validated = $request->validate([
             'navn' => 'required',
             'undertekst' => 'required',
-            'prioritering' => 'required',
         ]);
 
         \DB::table('kategori')->insert(
             [
             'navn' => $request->navn, 
             'undertekst' => $request->undertekst, 
-            'prioritering' => $request->prioritering,
+            'prioritering' => is_null($request->prioritering) ? 0 : $request->prioritering,
             'hide' => is_null($request->hide) ? 0 : $request->hide,
             'sticky' => is_null($request->sticky) ? 0 : $request->sticky,
             ]
@@ -47,7 +46,6 @@ class kategori extends Controller
         $validated = $request->validate([
             'navn' => 'required',
             'undertekst' => 'required',
-            'prioritering' => 'required',
         ]);
         
         if($request->delid == $request->navn) {
@@ -61,7 +59,7 @@ class kategori extends Controller
             ->update([
                 'navn' => $request->navn,
                 'undertekst' => $request->undertekst,
-                'prioritering' => is_null($request->rank) ? 0 : $request->rank,
+                'prioritering' => is_null($request->prioritering) ? 0 : $request->prioritering,
                 'hide' => is_null($request->hide) ? 0 : $request->hide,
                 'sticky' => is_null($request->sticky) ? 0 : $request->sticky,
                 'last_updated' => now()
