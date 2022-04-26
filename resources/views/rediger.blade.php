@@ -45,7 +45,7 @@
 <h1>Rediger en artikkel:</h1>
 <div class="list-group" style="margin-top: 8px; margin-bottom: 8px;">
 @foreach($artikler as $key => $data)
-  <a href="{{ url('/dashboard/rediger/side?artikkel=' . $data->tittel) }}" class="list-group-item list-group-item-action" aria-current="true">
+  <a href="{{ url('/dashboard/rediger/side?artikkel=' . $data->id) }}" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{$data->tittel}}</h5>
     </div>

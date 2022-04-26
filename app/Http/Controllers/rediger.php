@@ -15,7 +15,7 @@ class rediger extends Controller
         $innhold = \DB::table('artikler')->get();
         $kategori = \DB::table('kategori')->get();
         $artikkler_input = \Input::get('artikkel', 'stander');
-        $artikkel = \DB::table('artikler')->where('tittel', $artikkler_input)->get();
+        $artikkel = \DB::table('artikler')->where('id', $artikkler_input)->get();
             return view('side', ['artikkel' => $artikkel, 'innhold' => $innhold, 'kategori' => $kategori]);
     }
     public function artikkel_update(Request $request) {
