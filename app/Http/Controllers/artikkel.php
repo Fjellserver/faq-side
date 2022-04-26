@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class artikkel extends Controller
 {
     public function artikkel_create(Request $request) {
+        $request->flash();
         $validated = $request->validate([
             'tittel' => 'required',
             'intro' => 'required',

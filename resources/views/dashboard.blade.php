@@ -95,19 +95,19 @@
 @csrf
 <div class="mb-3">
   <label for="tittel" class="form-label">Artikkel navn</label>
-  <input type="text" class="form-control" id="tittel" name="tittel" placeholder="Tittel på artikkel" require>
+  <input type="text" class="form-control" id="tittel" name="tittel" placeholder="Tittel på artikkel" value="{{ old('tittel') }}">
 </div>
 <div class="mb-3">
   <label for="intro" class="form-label">Intro</label>
-  <input type="text" class="form-control" id="intro" name="intro" placeholder="Intro på artikkelen" require>
+  <input type="text" class="form-control" id="intro" name="intro" placeholder="Intro på artikkelen" value="{{ old('intro') }}">
 </div>
 <div class="mb-3">
   <label for="innhold" class="form-label">Innhold</label>
-  <textarea type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold"></textarea require>
+  <textarea type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold"></textarea>
 </div>
 <div class="mb-3">
 <label for="KategoriDataList" class="form-label">Velg en kategori</label>
-<input class="form-control" list="datalistOptions" id="KategoriDataList" name="KategoriDataList" placeholder="Søk...">
+<input class="form-control" list="datalistOptions" id="KategoriDataList" name="KategoriDataList" placeholder="Søk..." value="{{ old('KategoriDataList') }}">
 <datalist id="datalistOptions">
 @foreach($kategori as $key => $data)
   <option value="{{$data->navn}}">
@@ -116,7 +116,7 @@
 </div>
 <div class="mb-3">
     <label for="short" class="form-label">Et kort navn</label>
-    <input type="text" class="form-control" id="short" name="short" placeholder="Et kort navn" require>
+    <input type="text" class="form-control" id="short" name="short" placeholder="Et kort navn" value="{{ old('short') }}">
 </div>
 <script>
   function check()
@@ -169,15 +169,15 @@ function hidecheck()
 @csrf
   <div class="mb-3">
     <label for="navn" class="form-label">Kategori navn</label>
-    <input type="text" class="form-control" id="navn" name="navn" placeholder="Kategori navn">
+    <input type="text" class="form-control" id="navn" name="navn" placeholder="Kategori navn" value="{{ old('navn') }}">
   </div>
   <div class="mb-3">
     <label for="undertekst" class="form-label">Kategori undertekst</label>
-    <input type="text" class="form-control" id="undertekst" name="undertekst" placeholder="Hva handler kategorien om?">
+    <input type="text" class="form-control" id="undertekst" name="undertekst" placeholder="Hva handler kategorien om?" value="{{ old('undertekst') }}">
   </div>
   <div class="mb-3">
     <label for="prioritering" class="form-label">Prioritering</label>
-    <input type="number" class="form-control" name="prioritering" id="prioritering" placeholder="Gi arikkelen en prioritering jo høyere tall dersto høyere på siden kommer den">
+    <input type="number" class="form-control" name="prioritering" id="prioritering" placeholder="Gi arikkelen en prioritering jo høyere tall dersto høyere på siden kommer den" value="{{ old('prioritering') }}">
   </div>
   <script>
     function kategoricheck()

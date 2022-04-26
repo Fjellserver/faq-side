@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class kategori extends Controller
 {
     public function kategori_create(Request $request) {
-
+        $request->flash();
         $validated = $request->validate([
             'navn' => 'required',
             'undertekst' => 'required',
