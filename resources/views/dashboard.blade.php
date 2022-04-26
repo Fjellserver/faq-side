@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://fjellserver.no/assets/css/main.css">
     <!-- TinyMCE editor -->
     <script src="https://cdn.tiny.cloud/1/t16tdhk8qomhysh45tj4xxfg99e4lw0mbx6f12yrcpojbnje/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script type="text/javascript">
+   <script type="text/javascript">
         tinymce.init({
             selector: 'textarea',
 
@@ -103,7 +103,7 @@
 </div>
 <div class="mb-3">
   <label for="innhold" class="form-label">Innhold</label>
-  <textarea type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold"></textarea>
+  <textarea type="text" class="form-control" id="innhold" name="innhold" row="5" placeholder="Innhold">{{ old('innhold') }}</textarea>
 </div>
 <div class="mb-3">
 <label for="KategoriDataList" class="form-label">Velg en kategori</label>
@@ -140,7 +140,7 @@ function hidecheck()
 </script>
 <div class="mb-3">
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="0" id="sticky" name="sticky" onclick="check();">
+    <input class="form-check-input" type="checkbox" value="0" id="sticky" name="sticky" onclick="check();" @if (old('sticky')==1) checked @endif>
     <label class="form-check-label" for="sticky">
       Fest øverst på siden
     </label>
@@ -148,7 +148,7 @@ function hidecheck()
 </div>
 <div class="mb-3">
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="0" id="hide" name="hide" onclick="hidecheck();">
+    <input class="form-check-input" type="checkbox" value="0" id="hide" name="hide" onclick="hidecheck();" @if (old('hide')==1) checked @endif>
     <label class="form-check-label" for="hide">
       Skjul artikkel
     </label>
@@ -201,7 +201,7 @@ function hidecheck()
   </script>
   <div class="mb-3">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="0" id="stickykategori" name="sticky" onclick="kategoricheck();">
+      <input class="form-check-input" type="checkbox" value="0" id="stickykategori" name="sticky" onclick="kategoricheck();" @if (old('sticky')==1) checked @endif>
       <label class="form-check-label" for="sticky">
         Fest øverst på siden
       </label>
@@ -209,7 +209,7 @@ function hidecheck()
   </div>
   <div class="mb-3">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="0" id="hidekategori" name="hide" onclick="kategorihidecheck();">
+      <input class="form-check-input" type="checkbox" value="0" id="hidekategori" name="hide" onclick="kategorihidecheck();" @if (old('hide')==1) checked @endif>
       <label class="form-check-label" for="hide">
         Skjul artikkel
       </label>
