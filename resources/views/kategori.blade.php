@@ -65,13 +65,13 @@
           role="button" aria-label="Facebook" href="https://www.facebook.com/fjellserver/" target="_blank"
           rel="noopener"><i class="fab fa-facebook-f fa-fw"></i></a></li>
       <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
-          role="button" aria-label="Instagram" href="https://www.instagram.com/fjellserver/"><i
+          role="button" aria-label="Instagram" href="https://www.instagram.com/fjellserver/" target="_blank"><i
             class="fab fa-instagram fa-fw"></i></a></li>
       <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
-          role="button" aria-label="Discord" href="https://discord.gg/STX8gt6"><i
+          role="button" aria-label="Discord" href="https://discord.gg/STX8gt6" target="_blank"><i
             class="fab fa-discord fa-fw"></i></a></li>
       <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
-          role="button" aria-label="YouTube" href="https://www.youtube.com/channel/UCTLsqpKLdkaYBMEgY2Ogpzg/"><i
+          role="button" aria-label="YouTube" href="https://www.youtube.com/channel/UCTLsqpKLdkaYBMEgY2Ogpzg/" target="_blank"><i
             class="fab fa-youtube fa-fw"></i></a></li>
       <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
           role="button" aria-label="E-post" href="mailto:kontakt@fjellserver.no"><i
@@ -88,7 +88,7 @@
           <a href="https://fjellserver.no/salgsbetingelser/" style="color: white;">Salgsbetingelser</a>
         </div>
         <div class="col-md">
-          <a href="https://account.mojang.com/documents/minecraft_eula" style="color: white;">EULA</a>
+          <a href="https://account.mojang.com/documents/minecraft_eula" target="_blank" style="color: white;">EULA</a>
         </div>
         <div class="col-md">
           <a href="https://fjellserver.no/informasjonskapsler/" style="color: white;">Informasjonskapsler</a>
@@ -98,10 +98,10 @@
       <div class="col-md">
         <a class="font-weight-bold text-uppercase" style="font-size: 1.3rem; color: white;">Verktøy</a>
         <div class="col-md">
-          <a href="https://status.fjellserver.no/" style="color: white;">Systemstatus</a>
+          <a href="https://status.fjellserver.no/" target="_blank" style="color: white;">Systemstatus</a>
         </div>
         <div class="col-md">
-          <a href="https://hjelp.fjellserver.no" style="color: white;">Hjelp/FAQ</a>
+          <a href="https://hjelp.fjellserver.no" target="_blank" style="color: white;">Hjelp/FAQ</a>
         </div>
         <div class="col-md">
           <a href="https://fjellserver.no/kontakt" style="color: white;">Kontakt oss</a>
@@ -111,10 +111,10 @@
       <div class="col-md">
         <a class="font-weight-bold text-uppercase" style="font-size: 1.3rem; color: white;">Snarveier</a>
         <div class="col-md">
-          <a href="http://kunde.fjellserver.no/" style="color: white;">Kundeportal</a>
+          <a href="http://kunde.fjellserver.no/" target="_blank" style="color: white;">Kundeportal</a>
         </div>
         <div class="col-md">
-          <a href="https://panel.fjellserver.no/" style="color: white;">Kontrollpanel</a>
+          <a href="https://panel.fjellserver.no/" target="_blank" style="color: white;">Kontrollpanel</a>
         </div>
       </div>
     </div>
