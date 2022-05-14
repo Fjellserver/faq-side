@@ -42,12 +42,11 @@
 </div>
 <div class="mb-3">
 <label for="KategoriDataList" class="form-label">Velg en kategori</label>
-<input class="form-control" list="datalistOptions" id="KategoriDataList" name="KategoriDataList" placeholder="Søk..." value="{{ old('KategoriDataList') }}">
-<datalist id="datalistOptions">
+<select name="KategoriDataList" id="KategoriDataList" class="custom-select" aria-label="Velg en kategori">
 @foreach($kategori as $key => $data)
-  <option value="{{$data->navn}}">
-  @endforeach
-</datalist>
+  <option value="{{$data->navn}}">{{$data->navn}}</option>
+@endforeach
+</select>
 </div>
 <div class="mb-3">
     <label for="short" class="form-label">Et kort navn</label>
