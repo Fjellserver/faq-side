@@ -3,7 +3,6 @@
 <script type="text/javascript">
       tinymce.init({
           selector: 'textarea',
-
           image_class_list: [
           {title: 'img-responsive', value: 'img-fluid'},
           ],
@@ -21,6 +20,7 @@
           toolbar: "insertfile undo redo | styleselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
           content_style: "body {font-size: 14pt;}",
           image_title: true,
+          image_caption: true,
           automatic_uploads: true,
           images_upload_url: '/upload',
           file_picker_types: 'image',
