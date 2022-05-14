@@ -45,6 +45,6 @@ class rediger extends Controller
                 'last_updated' => now()
         ]);
         }
-        return redirect()->route('rediger');
+        return redirect()->route('admin-faq');
     }
 }

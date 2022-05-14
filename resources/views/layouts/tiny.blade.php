@@ -5,7 +5,7 @@
           selector: 'textarea',
 
           image_class_list: [
-          {title: 'img-responsive', value: 'img-responsive'},
+          {title: 'img-responsive', value: 'img-fluid'},
           ],
           height: 500,
           setup: function (editor) {
