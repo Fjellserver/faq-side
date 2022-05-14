@@ -12,7 +12,7 @@
 <div class="d-flex flex-column min-vh-100">
   @include('layouts.nav')
 
-<div class="container">
+<div class="container" id="topp">
   <div class="row">
     <div class="col">
     <h1 style="margin-top: 8px; margin-bottom: 8px;">Artikler:</h1>
@@ -30,6 +30,8 @@
     <p class="mb-1">{!! $data->intro !!}</p>
     <p class="mb-1"><b>Kategori:</b> {{$data->kategori}}</p>
     <p class="mb-1"><b>Sist endret:</b> {{date("d.m.Y, H:i", strtotime($data->last_updated))}}</p>
+    <p class="mb-1"><b>Festet:</b> @if (isset($data->sticky)) Nei @if ($data->sticky==1) Ja @endif @endif</p>
+    <p class="mb-1"><b>Skjult:</b> @if (isset($data->hide)) Nei @if ($data->hide==1) Ja @endif @endif</p>
   </a>
   @endforeach
 </div>

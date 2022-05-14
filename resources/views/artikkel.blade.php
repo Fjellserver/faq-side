@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="d-flex flex-column min-vh-100">
+<div class="d-flex flex-column min-vh-100" name="top">
   @include('layouts.nav')
 
 <div class="container">
@@ -21,6 +21,8 @@
 <hr>
 <p>{!! $data->innhold !!}</p>
 @endforeach
+<hr>
+<a href="#top"><p class="text-center">Ta meg til toppen</p></a>
 </div>
 </div>
 @include('layouts.footer')
