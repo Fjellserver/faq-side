@@ -31,6 +31,12 @@ class kategori extends Controller
             return view('kategori', ['artikler' => $artikler]);
         }
 
+    public function admin_show_kategori_artikler() {
+        $kategori = \Input::get('kategori', 'stander');
+        $artikler = \DB::table('artikler')->where('kategori', $kategori)->orderBy('sticky', 'desc')->get();
+            return view('admin-kategori', ['artikler' => $artikler]);
+        }
+
     public function kategori_edit() {
         $kategori = \DB::table('kategori')->orderBy('sticky', 'desc')->get();
             return view('redigerkategori', ['kategori' => $kategori]);

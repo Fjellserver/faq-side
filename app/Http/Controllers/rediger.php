@@ -6,11 +6,6 @@ use Illuminate\Http\Request;
 
 class rediger extends Controller
 {
-    public function artikkel_show() {
-        $artikler = \DB::table('artikler')->get();
-            return view('rediger', ['artikler' => $artikler]);
-        }
-
     public function artikkel_edit() {
         $innhold = \DB::table('artikler')->get();
         $kategori = \DB::table('kategori')->get();

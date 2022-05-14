@@ -24,7 +24,7 @@
         </ul>
     </div>
 @endif
-<a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ route('rediger')}}" role="button" onclick="return confirm('Er du sikker p&aring; at du vil gå tilbake?\nArtikkelen kan ikke gjennopprettes.')">Avbryt</a>
+<a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ route('admin-faq')}}" role="button" onclick="return confirm('Er du sikker p&aring; at du vil gå tilbake?\nArtikkelen kan ikke gjennopprettes.')">Avbryt</a>
 <h1>Oppdater en Artikkel:</h1>
 <form action="{{url('/dashboard/rediger/side')}}" method="post">
 @csrf

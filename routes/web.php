@@ -29,10 +29,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Con
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rediger', 'App\Http\Controllers\rediger@artikkel_show', function () {
-    return view('rediger');
-})->name('rediger');
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rediger/side', ['as' => 'artikkel', 'uses' => 'App\Http\Controllers\rediger@artikkel_edit'], function () {
     return view('side');
 })->name('side');
@@ -44,6 +40,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rediger/kategor
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rediger/kategori/selectedkategori', ['as' => 'selectedkategori', 'uses' => 'App\Http\Controllers\kategori@selectedkategori'], function () {
     return view('selectedkategori');
 })->name('selectedkategori');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/faq', 'App\Http\Controllers\mainshow@admin_show', function () {
+    return view('admin-faq');
+})->name('admin-faq');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/kategori', ['as' => 'kategori', 'uses' => 'App\Http\Controllers\kategori@admin_show_kategori_artikler'], function () {
+    return view('admin-kategori');
+})->name('admin-kategori');
 
 Route::middleware(['auth:sanctum', 'verified'])->post('dashboard/kategori', 'App\Http\Controllers\kategori@kategori_create', function () {
 });

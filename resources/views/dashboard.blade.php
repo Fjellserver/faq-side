@@ -24,7 +24,7 @@
         </ul>
     </div>
 @endif
-<a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ route('rediger')}}" role="button">Rediger en artikkel</a>
+<a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ route('admin-faq')}}" role="button">Rediger en artikkel</a>
 <h1>Lag en Artikkel:</h1>
 <form action="{{url('dashboard/artikkel')}}" method="post">
 @csrf
