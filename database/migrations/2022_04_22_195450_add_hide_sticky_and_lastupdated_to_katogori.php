@@ -14,7 +14,7 @@ class AddHideStickyAndLastupdatedToKatogori extends Migration
     public function up()
     {
         Schema::table('kategori', function (Blueprint $table) {
-            $table->timestamp('last_updated')->useCurrent()->format('d.m.Y, H:i');
+            $table->timestamp('last_updated')->useCurrent();
             $table->boolean('hide')->default('0');
             $table->boolean('sticky')->default('0');
             $table->string('prioritering')->default('0');

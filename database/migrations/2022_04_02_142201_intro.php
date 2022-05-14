@@ -26,4 +26,5 @@ class Intro extends Migration
     public function down()
     {
         Schema::dropIfExists('artikler');
+    }
 }

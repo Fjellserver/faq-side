@@ -32,7 +32,7 @@
       <h5 class="mb-1">{{$data->tittel}}</h5>
     </div>
     <p class="mb-1"><b>Kategori:</b> {{$data->kategori}}</p>
-    <p class="mb-1"><b>Sist endret:</b> {{$data->last_updated}}</p>
+    <p class="mb-1"><b>Sist endret:</b> {{date("d.m.Y, H:i", strtotime($data->last_updated))}}</p>
   </a>
   @endforeach
 </div>
