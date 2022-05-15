@@ -16,3 +16,12 @@
 <link rel="stylesheet" href="https://fjellserver.no/assets/css/scroll.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 <link rel="stylesheet" href="https://fjellserver.no/assets/css/cookie.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ13BN0BJD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KQ13BN0BJD');
+</script>
