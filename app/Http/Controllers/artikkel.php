@@ -36,10 +36,9 @@ class artikkel extends Controller
 
     public function show_artikler() {
         $artikler = \Input::get('artikkel', 'stander');
-        $urlkategori = \Input::get('kategori', 'stander');
         $artikkel = \DB::table('artikler')->where('url', $artikler)->get();
         $kategori = \DB::table('kategori')->orderBy('sticky', 'desc')->where('hide', 0)->orderBy('prioritering', 'desc')->get();
-            return view('artikkel', ['artikkel' => $artikkel, 'kategori' => $kategori, 'urlkategori' => $urlkategori]);
+            return view('artikkel', ['artikkel' => $artikkel, 'kategori' => $kategori]);
     }
 }
     
