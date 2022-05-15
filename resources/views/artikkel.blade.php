@@ -23,6 +23,17 @@
 @endforeach
 <hr>
 <a href="#top"><p class="text-center">Ta meg til toppen</p></a>
+<h1 style="margin-top: 8px; margin-bottom: 8px;">Andre Kategorier:</h1>
+<div class="list-group">
+@foreach($kategori as $key => $data)
+  <a href="{{ url('/kategori?kategori=' . $data->navn) }}" class="list-group-item list-group-item-action" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{$data->navn}}</h5>
+      <!-- <span class="badge bg-primary rounded-pill d-flex justify-content-between align-items-center text-white">14</span> -->
+    </div>
+    <p class="mb-1">{{$data->undertekst}}</p>
+  </a>
+  @endforeach
 </div>
 </div>
 @include('layouts.footer')
