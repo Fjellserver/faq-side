@@ -25,3 +25,14 @@
 
   gtag('config', 'G-KQ13BN0BJD');
 </script>
+<style>
+  .img-fluid {
+    position: relative;
+    max-width: 100%;
+}
+
+iframe {
+    position: relative;
+    max-width: 100%;
+ }
+</style>
