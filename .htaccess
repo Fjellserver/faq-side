@@ -1,0 +1,4 @@
+#Rewrite to domain without www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)
+RewriteRule ^(.*) https://%1/$1 [QSA,L,R=301]
