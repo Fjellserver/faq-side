@@ -14,6 +14,9 @@
             role="button" aria-label="Instagram" href="https://www.instagram.com/fjellserver/" target="_blank"><i
               class="fab fa-instagram fa-fw"></i></a></li>
         <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+            role="button" aria-label="tiktok" href="https://www.tiktok.com/@fjellserver" target="_blank"><i
+              class="fa-brands fa-tiktok fa-fw"></i></a></li>
+        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
             role="button" aria-label="Discord" href="https://discord.gg/STX8gt6" target="_blank"><i
               class="fab fa-discord fa-fw"></i></a></li>
         <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
@@ -39,8 +42,11 @@
           <div class="col-md">
             <a href="https://fjellserver.no/informasjonskapsler/" style="color: white;">Informasjonskapsler</a>
           </div>
+          <div class="col-md">
+            <a href="https://fjellserver.no/personvernerklæring/" style="color: white;">Personvernerklæring</a>
+          </div>
         </div>
-  
+
         <div class="col-md">
           <a class="font-weight-bold text-uppercase" style="font-size: 1.3rem; color: white;">Verktøy</a>
           <div class="col-md">
@@ -53,11 +59,11 @@
             <a href="https://fjellserver.no/kontakt" style="color: white;">Kontakt oss</a>
           </div>
         </div>
-  
+
         <div class="col-md">
           <a class="font-weight-bold text-uppercase" style="font-size: 1.3rem; color: white;">Snarveier</a>
           <div class="col-md">
-            <a href="http://kunde.fjellserver.no/" target="_blank" style="color: white;">Kundeportal</a>
+            <a href="https://kunde.fjellserver.no/" target="_blank" style="color: white;">Kundeportal</a>
           </div>
           <div class="col-md">
             <a href="https://panel.fjellserver.no/" target="_blank" style="color: white;">Kontrollpanel</a>

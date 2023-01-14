@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="https://fjellserver.no/assets/fontawesome6\css\brands.min.css">
+<link rel="stylesheet" href="https://fjellserver.no/assets/fontawesome6\css\fontawesome.min.css">
+<link rel="stylesheet" href="https://fjellserver.no/assets/fontawesome6\css\solid.min.css">
 <link rel="stylesheet" href="https://fjellserver.no/assets/css/logo.css">
 <link rel="stylesheet" href="https://fjellserver.no/assets/css/main.css">
 <link rel="stylesheet" href="https://fjellserver.no/assets/css/scroll.css">
