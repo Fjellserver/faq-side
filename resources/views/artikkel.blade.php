@@ -16,7 +16,7 @@
 <br>
 <a class="btn btn-primary btn-lg float-right" style="margin-top: 8px;" href="{{ url()->previous() }}" role="button">Gå tilbake</a>
 @foreach($artikkel as $key => $data)
-<h1>{{$data->tittel}}</h1>
+<h1 >{{$data->tittel}}</h1>
 <p>Sist endret: {{date("d.m.Y, H:i", strtotime($data->last_updated))}}</p>
 <hr>
 <p>{!! $data->innhold !!}</p>
@@ -28,10 +28,10 @@
 @foreach($kategori as $key => $data)
   <a href="{{ url('/kategori?kategori=' . $data->navn) }}" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{$data->navn}}</h5>
+      <h5 class="mb-1" style="line-height: 110%;">{{$data->navn}}</h5>
       <!-- <span class="badge bg-primary rounded-pill d-flex justify-content-between align-items-center text-white">14</span> -->
     </div>
-    <p class="mb-1">{{$data->undertekst}}</p>
+    <p class="mb-1" style="line-height: 110%;">{{$data->undertekst}}</p>
   </a>
   @endforeach
 </div>
