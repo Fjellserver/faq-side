@@ -34,8 +34,7 @@
   </a>
   @endforeach
 </div>
-<br>
-<a class="btn btn-primary btn-lg d-flex justify-content-center" href="#top">Ta meg til toppen</a>
+<a class="btn btn-primary btn-lg d-flex justify-content-center" style="margin-top: 5%; margin-bottom: 5%;" href="#top">Ta meg til toppen</a>
 </div>
 @include('layouts.footer')
 </body>

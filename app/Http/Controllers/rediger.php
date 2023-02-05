@@ -25,7 +25,7 @@ class rediger extends Controller
         $urltrim = str_replace(" ", "_", $request->tittel);
         $urltrimfinaly = str_replace("?", "", $urltrim);  
         
-        if($request->delid == $request->tittel) {
+        if($request->delid == $request->id) {
             \DB::table('artikler')
             ->where('tittel', $request->tittel)->delete();
         }

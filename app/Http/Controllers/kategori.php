@@ -54,7 +54,7 @@ class kategori extends Controller
             'undertekst' => 'required',
         ]);
         
-        if($request->delid == $request->navn) {
+        if($request->delid == $request->id) {
             \DB::table('kategori')
             ->where('id', $request->id)->delete();
         }
