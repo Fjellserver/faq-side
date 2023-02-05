@@ -34,6 +34,8 @@
   <input type="text" class="form-control" id="tittel" name="tittel" placeholder="Tittel på artikkel" value="{{$data->tittel}}" require>
   <label for="intro" class="form-label">Intro</label>
   <input type="text" class="form-control" id="intro" name="intro" placeholder="Intro på artikkelen" value="{{$data->intro}}" require>
+  <label for="url">Url til artikkelen</label>
+  <p><u><a href="https://hjelp.fjellserver.no/artikkel?artikkel={{$data->url}}">https://hjelp.fjellserver.no/artikkel?artikkel={{$data->url}}</a></u></p>
 </div>
 <div class="mb-3">
   <label for="innhold" class="form-label">Artikkel Innhold</label>

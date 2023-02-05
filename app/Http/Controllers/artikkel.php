@@ -31,7 +31,7 @@ class artikkel extends Controller
             'sticky' => is_null($request->sticky) ? 0 : $request->sticky,
             ]
         );
-        return redirect()->route('faq');
+        return redirect()->route('admin-faq');
     }
 
     public function show_artikler() {
