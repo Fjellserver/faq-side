@@ -18,10 +18,10 @@
 @foreach($kategori as $key => $data)
   <a href="{{ url('/kategori?kategori=' . $data->navn) }}" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{$data->navn}}</h5>
-      <!-- <span class="badge bg-primary rounded-pill d-flex justify-content-between align-items-center text-white">14</span> -->
+      <h5 class="mb-1" style="line-height: 110%;">{{$data->navn}}</h5>
+      {{-- <span class="badge bg-primary rounded-pill d-flex justify-content-between align-items-center text-white">14</span> --}}
     </div>
-    <p class="mb-1">{{$data->undertekst}}</p>
+    <p class="mb-1" style="line-height: 110%;">{{$data->undertekst}}</p>
   </a>
   @endforeach
 </div>

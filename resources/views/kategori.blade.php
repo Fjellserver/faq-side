@@ -25,9 +25,9 @@
 @foreach($artikler as $key => $data)
   <a href="{!! url('/artikkel?artikkel=' . $data->url)!!}" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{!! $data->tittel !!}</h5>
+      <h5 class="mb-1" style="line-height: 110%;">{!! $data->tittel !!}</h5>
     </div>
-    <p class="mb-1">{!! $data->intro !!}</p>
+    <p class="mb-1" style="line-height: 110%;">{!! $data->intro !!}</p>
   </a>
   @endforeach
 </div>
