@@ -22,7 +22,6 @@
 <p>{!! $data->innhold !!}</p>
 @endforeach
 <hr>
-<a class="btn btn-primary btn-lg d-flex justify-content-center" href="#top">Ta meg til toppen</a>
 <h1 style="margin-top: 8px; margin-bottom: 8px;">Andre Kategorier:</h1>
 <div class="list-group">
 @foreach($kategori as $key => $data)
@@ -35,6 +34,8 @@
   </a>
   @endforeach
 </div>
+<br>
+<a class="btn btn-primary btn-lg d-flex justify-content-center" href="#top">Ta meg til toppen</a>
 </div>
 @include('layouts.footer')
 </body>
