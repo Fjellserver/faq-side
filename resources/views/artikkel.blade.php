@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="theme-color" content="#1b316b"/>
-    <title>Hjelpeside | Fjellserver.no</title>
+    @foreach($artikkel as $key => $data)
+    <meta name="description" content="{{$data->kategori}} - {{$data->tittel}}">
+    <meta name="author" content="Batalden Data">
+    <title>{{$data->tittel}} | Fjellserver.no</title>
+    @endforeach
     @include('layouts.meta')
 </head>
 <body>
