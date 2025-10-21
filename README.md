@@ -29,6 +29,8 @@ Dersom du ikke ønsker at hvemsom helst kan registrere seg
 //Features::registration()
 ```
 
+Generer site map "php artisan app:generate-sitemap"
+
 # Lenker
 ```
 /register
