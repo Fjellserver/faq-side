@@ -55,10 +55,10 @@ For å automatisere genereringen av sitemap, kan du legge til en cron-jobb som k
  crontab -e
 
 2. Legg til følgende linje nederst i filen:
- 0 3 * * * cd /path/til/prosjektet && /usr/bin/php artisan app:generate-sitemap >> /dev/null 2>&1
+ 0 3 * * 1 cd /path/til/prosjektet && /usr/bin/php artisan app:generate-sitemap >> /dev/null 2>&1
 
  Forklaring:
- - 0 3 * * * → kjører hver dag kl. 03:00
+- `0 3 * * 1` → kjører hver mandag kl. 03:00
  - cd /path/til/prosjektet → bytter til prosjektmappen
  - /usr/bin/php artisan app:generate-sitemap → kjører Laravel-kommandoen
  - >> /dev/null 2>&1 → skjuler output (valgfritt)
