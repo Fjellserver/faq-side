@@ -1,10 +1,9 @@
-<footer class="footer text-center" style="padding-bottom: 0%; padding-top: 0%;">
+  <footer class="footer text-center" style="padding-bottom: 0%; padding-top: 0%;">
     <section style="background-color: black;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="white" fill-opacity="1"
-          d="M0,192L80,181.3C160,171,320,149,480,170.7C640,192,800,256,960,261.3C1120,267,1280,213,1360,186.7L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
-        </path>
-      </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="white" fill-opacity="1" d="M0,192L80,181.3C160,171,320,149,480,170.7C640,192,800,256,960,261.3C1120,267,1280,213,1360,186.7L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+            </path>
+          </svg>
       <h4 class="text-uppercase"><strong>sosialt</strong></h4>
       <ul class="list-inline">
         <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
@@ -26,7 +25,7 @@
             role="button" aria-label="E-post" href="mailto:kontakt@fjellserver.no"><i
               class="fas fa-envelope fa-fw"></i></a></li>
       </ul>
-  
+
       <div class="row">
         <div class="col-md">
           <a class="font-weight-bold text-uppercase" style="font-size: 1.3rem; color: white;">Juridisk</a>
@@ -78,15 +77,17 @@
     </section>
     <div class="copyright py-4 text-center text-white" style="background-color: #2c3e50;">
       <div class="container">
-        <small id="year">Opphavsrett © Fjellserver 2019 -&nbsp;</small>
-        <br>
         <small>Fjellserver.no er på ingen måte tilknyttet/levert/drevet/støttet av Mojang AB eller Microsoft.</small>
         <br>
+        <img src="https://app.greenweb.org/api/v3/greencheckimage/fjellserver.no?nocache=true" alt="This website runs on green hosting - verified by thegreenwebfoundation.org" width="200px" height="95px">
+        <br>
         <small>Fjellserver.no eies av Batalden Data Org.nr 928 144 488</small>
+        <br>
+        <small id="year">Opphavsrett © Fjellserver 2019 -&nbsp;</small>
       </div>
     </div>
   </footer>
-  <script src="https://fjellserver.no/assets/js/jquery.min.js"></script>
+    <script src="https://fjellserver.no/assets/js/jquery.min.js"></script>
   <script src="https://fjellserver.no/assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="https://fjellserver.no/assets/js/freelancer.js"></script>
