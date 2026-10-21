@@ -23,15 +23,15 @@
   </div>
 <div class="list-group">
 @foreach($artikler as $key => $data)
-  <a href="{!! url('/dashboard/rediger/side?artikkel=' . $data->id) !!}" class="list-group-item list-group-item-action" aria-current="true">
+  <a href="{{ url('/dashboard/rediger/side?artikkel=' . $data->id) }}" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1" style="line-height: 110%;">{!! $data->tittel !!}</h5>
+      <h5 class="mb-1" style="line-height: 110%;">{{ $data->tittel }}</h5>
     </div>
-    <p class="mb-1" style="line-height: 110%;">{!! $data->intro !!}</p>
+    <p class="mb-1" style="line-height: 110%;">{{ $data->intro }}</p>
     <p class="mb-1"><b>Kategori:</b> {{$data->kategori}}</p>
     <p class="mb-1"><b>Sist endret:</b> {{date("d.m.Y, H:i", strtotime($data->last_updated))}}</p>
-    <p class="mb-1"><b>Festet:</b> @if ($data->sticky==1) ✅ @else ($data->sticky==0) ❌ @endif</p>
-    <p class="mb-1"><b>Skjult:</b> @if ($data->hide==1) ✅ @else ($data->hide==0) ❌ @endif</p>
+    <p class="mb-1"><b>Festet:</b> @if ($data->sticky==1) ✅ @else ❌ @endif</p>
+    <p class="mb-1"><b>Skjult:</b> @if ($data->hide==1) ✅ @else ❌ @endif</p>
   </a>
   @endforeach
 </div>
