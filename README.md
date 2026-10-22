@@ -60,6 +60,8 @@ Skru på tofaktor-autentisering under «Din bruker» etter første innlogging.
   lagrer filene under tilfeldige navn. `public/.htaccess` nekter kjøring av
   skript under `/storage`.
 - Alle POST-ruter, inkludert `/upload`, krever CSRF-token.
+- Editoren i dashbordet bruker TinyMCE 7 fra Tiny Cloud. TinyMCE 5 er utgått og
+  får ikke lenger sikkerhetsoppdateringer, så ikke rull tilbake til den.
 - Passord må være minst 12 tegn med bokstaver og tall i produksjon, og sjekkes
   mot kjente lekkasjer (Have I Been Pwned).
 - Svarene får sikkerhetsheadere (`X-Content-Type-Options`, `Referrer-Policy`,
