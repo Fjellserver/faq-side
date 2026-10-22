@@ -4,16 +4,29 @@ hjelp.fjellserver.no
 
 ---
 
+## Krav
+- PHP 8.3.36 eller nyere (Laravel 13). Composer nekter å installere på eldre PHP.
+- Composer 2
+- Node.js 20 eller nyere (kun for å bygge frontend-assets)
+- MySQL/MariaDB
+
+---
+
 ## Installer
 Kjør følgende kommandoer for å sette opp prosjektet:
 
 composer install --optimize-autoloader --no-dev
 php artisan key:generate
-npm install
+npm ci
+npm run build
 php artisan migrate --force
+php artisan storage:link
 chgrp -R www-data storage bootstrap/cache
 chmod -R ug+rwx storage bootstrap/cache
 chmod -R 775 storage
+
+Sett `APP_ENV=production` og `APP_DEBUG=false` i `.env` på serveren. Da blir
+sesjonskapselen automatisk kun sendt over HTTPS.
 
 ---
 
@@ -30,14 +43,28 @@ php artisan storage:link
 ---
 
 ## Brukeropprettelse
-Husk å opprette en bruker!
-Konfigurasjonen finnes i:
+Alle innloggede brukere har full tilgang til dashbordet, så åpen registrering er
+slått av (`Features::registration()` er kommentert ut i `config/fortify.php`).
 
-config/fortify.php
+Opprett den første brukeren fra kommandolinjen:
 
-Dersom du ikke ønsker at hvem som helst skal kunne registrere seg, kommenter ut følgende linje:
+php artisan tinker
+>>> App\Models\User::create(['name' => 'Admin', 'email' => 'admin@example.com', 'password' => Hash::make('et-langt-og-unikt-passord')]);
 
-// Features::registration()
+Skru på tofaktor-autentisering under «Din bruker» etter første innlogging.
+
+---
+
+## Sikkerhet
+- Bildeopplasting fra editoren godtar kun jpg, png, gif og webp (maks 5 MB) og
+  lagrer filene under tilfeldige navn. `public/.htaccess` nekter kjøring av
+  skript under `/storage`.
+- Alle POST-ruter, inkludert `/upload`, krever CSRF-token.
+- Passord må være minst 12 tegn med bokstaver og tall i produksjon, og sjekkes
+  mot kjente lekkasjer (Have I Been Pwned).
+- Svarene får sikkerhetsheadere (`X-Content-Type-Options`, `Referrer-Policy`,
+  `Permissions-Policy`, `Content-Security-Policy: frame-ancestors` og HSTS over HTTPS).
+- Kjør `composer audit` og `npm audit` jevnlig for å fange sårbare avhengigheter.
 
 ---
 
@@ -68,6 +95,6 @@ For å automatisere genereringen av sitemap, kan du legge til en cron-jobb som k
 ---
 
 ## Lenker
-/register
 /login
 /dashboard
+/user/profile

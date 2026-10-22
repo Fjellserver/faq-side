@@ -3,48 +3,59 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class rediger extends Controller
 {
-    public function artikkel_edit() {
-        $innhold = \DB::table('artikler')->get();
-        $kategori = \DB::table('kategori')->get();
-        $artikkler_input = \Input::get('artikkel', 'stander');
-        $artikkel = \DB::table('artikler')->where('id', $artikkler_input)->get();
-            return view('side', ['artikkel' => $artikkel, 'innhold' => $innhold, 'kategori' => $kategori]);
+    public function artikkel_edit(Request $request)
+    {
+        $id = $this->queryId($request, 'artikkel');
+
+        $kategori = DB::table('kategori')->get();
+        $artikkel = DB::table('artikler')->where('id', $id)->get();
+
+        return view('side', ['artikkel' => $artikkel, 'kategori' => $kategori]);
     }
-    public function artikkel_update(Request $request) {
+
+    public function artikkel_update(Request $request)
+    {
         $validated = $request->validate([
-            'tittel' => 'required',
-            'intro' => 'required',
-            'innhold' => 'required',
-            'KategoriDataList' => 'required',
-            'short' => 'required',
+            'id' => ['required', 'integer', 'exists:artikler,id'],
+            'tittel' => ['required', 'string', 'max:255'],
+            'intro' => ['required', 'string', 'max:2000'],
+            'innhold' => ['required', 'string'],
+            'KategoriDataList' => ['required', 'string', 'max:255', 'exists:kategori,navn'],
+            'short' => ['required', 'string', 'max:255'],
+            'hide' => ['nullable', 'boolean'],
+            'sticky' => ['nullable', 'boolean'],
+            'delid' => ['nullable', 'string', 'max:255'],
         ]);
 
-        $urltrim = str_replace(" ", "_", $request->tittel);
-        $urltrimfinaly = str_replace("?", "", $urltrim);  
-        
-        if($request->delid == $request->id) {
-            \DB::table('artikler')
-            ->where('tittel', $request->tittel)->delete();
+        $existing = DB::table('artikler')->where('id', $validated['id'])->first();
+
+        // Deletion must be confirmed by typing the article's title (or id) into "delid",
+        // and only ever removes this one row.
+        $confirmDelete = isset($validated['delid'])
+            && in_array($validated['delid'], [(string) $existing->id, $existing->tittel], true);
+
+        if ($confirmDelete) {
+            DB::table('artikler')->where('id', $existing->id)->delete();
+        } else {
+            DB::table('artikler')
+                ->where('id', $existing->id)
+                ->update([
+                    'tittel' => $validated['tittel'],
+                    'url' => $this->artikkelUrl($validated['tittel']),
+                    'intro' => $validated['intro'],
+                    'innhold' => $validated['innhold'],
+                    'kategori' => $validated['KategoriDataList'],
+                    'short' => $validated['short'],
+                    'hide' => (int) ($validated['hide'] ?? 0),
+                    'sticky' => (int) ($validated['sticky'] ?? 0),
+                    'last_updated' => now(),
+                ]);
         }
 
-        else {
-            \DB::table('artikler')
-            ->where('id', $request->id)
-            ->update([
-                'tittel' => $request->tittel,
-                'url' => $urltrimfinaly,
-                'intro' => $request->intro,
-                'innhold' => $request->innhold,
-                'kategori' => $request->KategoriDataList,
-                'short' => $request->short,
-                'hide' => is_null($request->hide) ? 0 : $request->hide,
-                'sticky' => is_null($request->sticky) ? 0 : $request->sticky,
-                'last_updated' => now()
-        ]);
-        }
         return redirect()->route('admin-faq');
     }
 }
