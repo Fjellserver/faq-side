@@ -5,7 +5,7 @@ hjelp.fjellserver.no
 ---
 
 ## Krav
-- PHP 8.3 eller nyere (Laravel 13)
+- PHP 8.3.36 eller nyere (Laravel 13). Composer nekter å installere på eldre PHP.
 - Composer 2
 - Node.js 20 eller nyere (kun for å bygge frontend-assets)
 - MySQL/MariaDB
